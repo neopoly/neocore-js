@@ -1,0 +1,27 @@
+{
+  "name": "neocore",
+  "version": "0.0.1",
+  "description": "Core js utils, like DI helpers, react-mixins, ...",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:neopoly/neocore-js.git"
+  },
+  "author": "Dennis Treder @ Neopoly",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-mkdir": "^0.1.2",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-react": "^0.12.2",
+    "grunt-remove": "^0.1.0",
+    "jsdom": "^5.4.1",
+    "lodash": "^3.8.0",
+    "mocha": "^2.2.4"
+  }
+}
