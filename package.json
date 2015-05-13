@@ -1,6 +1,6 @@
 {
   "name": "neocore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Core js utils, like DI helpers, react-mixins, ...",
   "scripts": {
     "test": "grunt test"
