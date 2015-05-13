@@ -6,4 +6,8 @@ neocore
 
 [![Travis][travis-badge]][travis]
 
-"New" core js utils, like DI helpers, react-mixins, ...
+*New* core js utils, like DI helpers, react-mixins, ...
+
+```
+npm install --save neocore
+```
