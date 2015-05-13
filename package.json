@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Core js utils, like DI helpers, react-mixins, ...",
   "scripts": {
-    "test": "grunt test"
+    "test": "(npm install -g grunt-cli) && (grunt test)"
   },
   "repository": {
     "type": "git",
