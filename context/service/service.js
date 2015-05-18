@@ -70,6 +70,11 @@ exports.Service = (function(){
     this.registerFactory(key, function() { return new class_to_instanciate(); });
   };
 
+  prot.registerClassInstance = function registerClassFactory(key, class_to_instanciate__or__null) {
+    var class_to_instanciate = class_to_instanciate__or__null || key; // assuming key is class
+    this.registerInstance(key, function() { return new class_to_instanciate(); });
+  };
+
   prot.__buildInstanceWithInjections = function(creation_function) {
     var inst = creation_function();
     if(this.injector) this.injector.inject(inst);

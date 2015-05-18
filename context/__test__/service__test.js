@@ -174,7 +174,7 @@ describe("Service", function(){
     assert.strictEqual(service.resolve("flat").deep.deeper.val, "i am deeper");
   });
 
-  it("registers Class for itself", function() {
+  it("registers Class for itself as factory", function() {
     var
       AClass = function() {};
 
@@ -184,7 +184,7 @@ describe("Service", function(){
     assert.strictEqual(service.resolve(AClass).hello(), "expected");
   });
 
-  it("registers Class as pseudo-interface", function() {
+  it("registers factory that creates instances with new", function() {
     var
       AClass = function() {},
       AClassImplementation = function() {};
@@ -193,7 +193,31 @@ describe("Service", function(){
     AClassImplementation.prototype.hello = function() { return "expected"; };
 
     service.registerClassFactory(AClass, AClassImplementation);
-    assert.strictEqual(service.resolve(AClass).hello(), "expected")
+    assert.strictEqual(service.resolve(AClass).hello(), "expected");
+  });
+
+  it("registers class-instance that is created (once) with new", function() {
+    var
+      AClass = function() {},
+      AClassImplementation = function() {};
+
+    AClass.prototype.hello = function() { return "should not be called"; };
+    AClassImplementation.prototype.hello = function() { return "expected"; };
+
+    service.registerClassInstance(AClass, AClassImplementation);
+    var returned;
+    assert.strictEqual((returned = service.resolve(AClass)).hello(), "expected");
+    assert.strictEqual(returned, service.resolve(AClass));
+  });
+
+  it("registers class-instance that is created (once) with new for itself", function() {
+    var
+      AClass = function() {};
+
+    AClass.prototype.hello = function() { return "expected"; };
+
+    service.registerClassInstance(AClass);
+    assert.strictEqual((returned = service.resolve(AClass)).hello(), "expected");
   });
 
   it("register Class also injects", function() {
