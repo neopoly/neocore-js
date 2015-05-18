@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-remove');
 
-  grunt.registerTask('test', ['remove', 'mkdir:test', 'copy:test', 'react:test', 'mochaTest']);
+  grunt.registerTask('test', ['remove', 'clean', 'mkdir:test', 'copy:test', 'react:test', 'mochaTest']);
   grunt.registerTask('default', function(){
     console.log(
       ["\nHello developer, use these grunt tasks:\n---------------------------------------\n",
@@ -19,6 +19,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     remove: {
+      options: {
+        trace: true
+      },
       dirList: ['tmp_test']
     },
     mochaTest: {
@@ -26,7 +29,7 @@ module.exports = function(grunt) {
         reporter: 'spec',
         clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
       },
-      src: ['tmp_test/node_modules/**/*__test.js']
+      src: ['tmp_test/**/*__test.js']
     },
     react: {
       test: {
@@ -54,13 +57,9 @@ module.exports = function(grunt) {
     copy: {
       test: {
         files: [
-          {expand: true, cwd: '.', src: ['**'], dest: 'tmp_test/node_modules'}
+          {expand: true, cwd: '.', src: ['__test__/**', 'context/**', 'signals/**', 'react/**'], dest: 'tmp_test/node_modules'}
         ]
       }
-    },
-    watch: {
-      files: 'source/node_modules/*',
-      tasks: ['default']
     }
   });
 };
