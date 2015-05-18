@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Core js utils, like DI helpers, react-mixins, ...",
   "homepage": "https://github.com/neopoly/neocore-js",
+  "main": "context/context.js",
   "authors": [
     "Dennis Treder <dt@neopoly.de>"
   ],
