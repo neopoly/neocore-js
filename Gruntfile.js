@@ -57,7 +57,7 @@ module.exports = function(grunt) {
     copy: {
       test: {
         files: [
-          {expand: true, cwd: '.', src: ['__test__/**', 'context/**', 'signals/**', 'react/**'], dest: 'tmp_test/node_modules'}
+          {expand: true, cwd: '.', src: ['__test__/**', 'tween/**', 'context/**', 'signals/**', 'react/**'], dest: 'tmp_test/node_modules'}
         ]
       }
     }

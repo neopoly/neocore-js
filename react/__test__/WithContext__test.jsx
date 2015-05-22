@@ -4,7 +4,7 @@ var
   assert = require("chai").assert,
   React = require("react/addons"),
   TestUtils = React.addons.TestUtils,
-  WithContext = require("neocore/react/__test__/WithContext"),
+  WithContext = require("./WithContext"),
   ContextMixins = require("neocore/react/context_mixins"),
   Context = require("neocore/context/context").Context;
 
