@@ -16,7 +16,7 @@ var
 */
 exports = module.exports = function(context, Child, props) {
   var cls = React.createClass({
-    mixins: [require("neocore/react/context_mixins").Parent(context)],
+    mixins: [require("react/context_mixins").Parent(context)],
     render: function(){
       return (
         React.createFactory(Child)(props || undefined)

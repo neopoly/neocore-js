@@ -1,12 +1,12 @@
-require("neocore/__test__/dom").fakeDom();
+require("__test__/dom").fakeDom();
 
 var
   assert = require("chai").assert,
   React = require("react/addons"),
   TestUtils = React.addons.TestUtils,
   WithContext = require("./WithContext"),
-  ContextMixins = require("neocore/react/context_mixins"),
-  Context = require("neocore/context/context").Context;
+  ContextMixins = require("react/context_mixins"),
+  Context = require("context/context").Context;
 
 describe("WithContext", function(){
 

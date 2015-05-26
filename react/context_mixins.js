@@ -21,7 +21,8 @@ exports.Child = {
     service: React.PropTypes.object.isRequired,
     injector: React.PropTypes.object.isRequired
   },
-  componentWillMount: function() {
+  getInitialState: function() {
     this.context.injector.inject(this);
+    return {};
   }
 };
