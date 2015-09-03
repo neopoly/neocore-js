@@ -1,6 +1,6 @@
 {
   "name": "neocore",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Core js utils, like DI helpers, react-mixins, ...",
   "homepage": "https://github.com/neopoly/neocore-js",
   "main": "context/context.js",

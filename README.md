@@ -35,8 +35,8 @@ grunt test
 
 ## Release new Version
 
+Set version in package.json and bower.json, then run...
+
 ```
 npm publish
 ```
-
-...then manually update bower.json version to the same and run push!
