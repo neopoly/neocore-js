@@ -78,4 +78,15 @@ describe("Injector", function() {
     injector.inject(inst);
     assert.isTrue(called);
   });
+
+  it("preserves this in afterInject", function() {
+    var cl = function(){
+
+    },
+    this_from_afterInject;
+    cl.prototype.afterInject = function() { this_from_afterInject = this; };
+
+    var inst = new cl();
+    assert.strictEqual(this_from_afterInject, cl);
+  });
 });

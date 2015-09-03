@@ -21,6 +21,7 @@ exports.Injector = (function(){
 
     var after = into.afterInject || into.after_inject;
     if(after) after();
+    //if(after) after.apply(into);
   };
 
   return Injector;
